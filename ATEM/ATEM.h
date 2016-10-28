@@ -102,6 +102,7 @@ class ATEM
 	uint8_t _ATEM_TrSS_TransitionStyle;			// 0=MIX, 1=DIP, 2=WIPE, 3=DVE, 4=STING
 	boolean _ATEM_KeOn[4];	// Upstream Keyer 1-4 On state
 	boolean _ATEM_DskOn[2];	// Downstream Keyer 1-2 On state
+	boolean _ATEM_DskAuto[2];	// Downstream Keyer Auto 1-2 On state
 	boolean _ATEM_DskTie[2];	// Downstream Keyer Tie 1-2 On state
 	uint8_t _ATEM_TrPs_frameCount;	// Count down of frames in case of a transition (manual or auto)
 	uint16_t _ATEM_TrPs_position;	// Position from 0-1000 of the current transition in progress
@@ -180,6 +181,7 @@ class ATEM
 	boolean getUpstreamKeyerStatus(uint8_t inputNumber);
 	boolean getUpstreamKeyerOnNextTransitionStatus(uint8_t inputNumber);
 	boolean getDownstreamKeyerStatus(uint8_t inputNumber);
+	boolean getDownstreamKeyerAuto(uint8_t inputNumber);
 	uint16_t getTransitionPosition();
 	bool getTransitionPreview();
 	uint8_t getTransitionType();
